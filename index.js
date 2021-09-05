@@ -21,6 +21,8 @@ const userRoutes = require('./routes/users');
 const propertyRoutes = require('./routes/properties');
 const reviewRoutes = require('./routes/reviews');
 
+const MongoDBStore = require("connect-mongo")(session);
+
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/shumel-realestate'
 
 mongoose.connect(dbUrl, {
