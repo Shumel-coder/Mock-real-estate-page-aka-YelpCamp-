@@ -1,5 +1,5 @@
 if(process.env.NODE_ENV !== "production") {
-    require("dotenv").config();
+    require('dotenv').config();
 }
 
 const express = require('express');
@@ -74,7 +74,7 @@ const sessionConfig = {
     }
 }
 
-app.use(session(sessionConfig))
+app.use(session(sessionConfig));
 app.use(flash());
 app.use(helmet());
 
@@ -138,9 +138,11 @@ app.use((req, res, next) => {
     next();
 })
 
+
 app.use('/', userRoutes);
 app.use('/properties', propertyRoutes)
 app.use('/properties/:id/reviews', reviewRoutes)
+
 
 app.get('/', (req, res) => {
     res.render('home')
