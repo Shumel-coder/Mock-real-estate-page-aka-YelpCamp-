@@ -10,7 +10,7 @@
 
 <body class="d-flex text-center text-white bg-dark">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="mb-auto">
+        <!-- <header class="mb-auto">
             <div>
                 <h3 class="float-md-left mb-0">Shumel's Real Estate</h3>
                 <nav class="nav nav-masthead justify-content-center float-md-right">
@@ -24,7 +24,31 @@
                     <% } %>
                 </nav>
             </div>
-        </header>
+        </header> -->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-transparent">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Shumel's Real Estate</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/properties">Properties</a>
+                        <a class="nav-link" href="/properties/new">New Property</a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <% if(!currentUser) {%>
+                        <a class="nav-link" href="/login">Login</a>
+                        <a class="nav-link" href="/register">Register</a>
+                        <% } else {%>
+                        <a class="nav-link" href="/logout">Logout</a>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </nav>
         <main class="px-3">
             <h1>Welcome</h1>
             <p class="lead">  Ths is Shumel's Real Estate! <br> Jump right in and look through our beautiful home listings.
@@ -33,8 +57,10 @@
                 Properties</a>
         </main>
 
-        <footer class="mt-auto text-white-50">
-            <p>&copy; Shumel's Real Estate 2020 </p>
+        <footer class="footer bg-transparent py-3 mt-auto">
+            <div class="container">
+                <span class="text-muted">&copy; Shumel's Real Estate 2020</span>
+            </div>
         </footer>
 
 
